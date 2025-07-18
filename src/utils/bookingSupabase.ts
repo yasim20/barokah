@@ -60,7 +60,7 @@ export const saveBookingToSupabase = async (formData: BookingFormData): Promise<
       .from('customers')
       .select('id')
       .eq('phone', formData.phone)
-      .single();
+      .maybeSingle();
 
     let customerId: string;
 
